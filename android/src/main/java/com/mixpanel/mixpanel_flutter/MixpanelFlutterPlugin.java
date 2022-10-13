@@ -181,7 +181,7 @@ public class MixpanelFlutterPlugin implements FlutterPlugin, MethodCallHandler {
             Boolean optOutTrackingDefault = call.<Boolean>argument("optOutTrackingDefault");
             mixpanel = MixpanelAPI.getInstance(context, token, optOutTrackingDefault == null ? false : optOutTrackingDefault);
         } else {
-            mixpanel = MixpanelAPI.getInstance(context, token);
+            mixpanel = MixpanelAPI.getInstance(context, token, false);
         }
         result.success(Integer.toString(mixpanel.hashCode()));
     }
